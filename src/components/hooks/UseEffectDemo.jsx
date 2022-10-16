@@ -59,6 +59,36 @@ export default function UseEffectDemo() {
 
 
 
+    let [idTP, setTP] = useState("");
+    let [arrQuan, setQuan] = useState([]);
+
+    useEffect(() => {
+        if (idTP !== "") {
+            let thanhPho = arrDiaChi.find((tp) => {
+                return tp.id == idTP;
+            })
+            let arrQuanNew = thanhPho.arrQuan;
+            setQuan(arrQuanNew);
+        }
+
+
+    },[idTP]);
+
+    let renderQuan = () => {
+        if (arrQuan.length === 0) {
+            return <option>hãy chọn thành phố  trước</option>
+        } else {
+            return arrQuan.map((quan) => {
+                return <option value={quan.id} key={quan.id}>
+                    {quan.name}
+
+                </option>
+            })
+
+        }
+
+    }
+
 
     return (
         <div className='container'>
@@ -72,12 +102,22 @@ export default function UseEffectDemo() {
                 }} className='btn btn-info'>+</button>
                 <div className="form-group">
                     <label htmlFor="">thành phố</label>
-                    <select className="form-control" id="">
+                    <select className="form-control" value={idTP} id="" onChange={(event) => {
+                        let idTPchon = event.target.value
+                        setTP(idTPchon);
+
+                    }}>
                         <option>hãy chọn thành phố</option>
-                        <option value={"HCM"}>hồ CHÍ MIH</option>
+                        <option value={"HCM"}>HỒ CHÍ MINH</option>
                         <option value={"DN"}>ĐÀ NẴNG</option>
-                        <option>4</option>
-                        <option>5</option>
+
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="">quận</label>
+                    <select className="form-control" id="">
+                        {renderQuan()}
+
                     </select>
                 </div>
 
