@@ -30,6 +30,12 @@ export default function Header() {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/use-effect">UseEffect</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/apircc">APIrcc</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/apirfc">APIrfc</NavLink>
+                        </li>
 
                     </ul>
 

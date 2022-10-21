@@ -8,6 +8,8 @@ import Register from './pages/Register/Register';
 import Header from './components/Header/Header';
 import Counter from "./components/hooks/Counter"
 import UseEffectDemo from './components/hooks/UseEffectDemo';
+import ApiRCC from './components/hooks/ApiRCC';
+import ApiRFC from './components/hooks/ApiRFC';
 
 // cáu hình router
 
@@ -28,7 +30,9 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/counter" component={Counter} />
         <Route exact path="/use-effect" component={UseEffectDemo} />
-
+        <Route exact path="/apircc" component={ApiRCC} />
+        <Route exact path="/apirfc" component={ApiRFC} />
+        
         {/* khi không có / trang cụ thẻ thì mặt đỊnh hiện home   */}
         <Route exact path="/" component={Home} />
       </Switch>

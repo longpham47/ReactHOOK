@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 // biến toàn cục
+// cjỉ tạo một lần .khi render lại thì ko tạo lại nữa
 const arrDiaChi = [
     {
         id: "HCM",
@@ -25,6 +26,8 @@ const arrDiaChi = [
 ]
 
 
+let timeOut = "";
+
 export default function UseEffectDemo() {
     // biến cục bộ
 
@@ -47,7 +50,7 @@ export default function UseEffectDemo() {
 
     useEffect(() => {
         console.log("componentDidmound");
-    }, []);// tham số thứ 2 là mảng rổng thì chạy thoe componentDIdound
+    }, []);// tham số thứ 2 là mảng rổng thì chạy thoe componentDIdmound
 
     useEffect(() => {
         /// chạy khi numer thay đổi
@@ -55,7 +58,7 @@ export default function UseEffectDemo() {
         // nhưng ở lân 2 khi updatingthì chỉ chạy khi numer đổi
 
         setLike(like + 1)
-    }, [number]);// truyên giá trị vào tham số  []
+    }, [number]);// truyên giá trị vào tham số  [] ; Shallow Compare (number,string,bôlean)
 
 
 
@@ -72,7 +75,19 @@ export default function UseEffectDemo() {
         }
 
 
-    },[idTP]);
+    }, [idTP]);
+
+    useEffect(() => { 
+         timeOut = setInterval(()=>{
+            console.log("interval")
+        },1000);
+        return () => {
+            // code trong hàm sẽ thực thi được thực hiện khi component bién mất khỏi UI
+            // dùng để tắt các sever chạy ngầm(willUnmount)
+            clearInterval(timeOut);
+        }
+     },[]);// chạy mouting
+
 
     let renderQuan = () => {
         if (arrQuan.length === 0) {
