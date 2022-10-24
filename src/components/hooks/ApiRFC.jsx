@@ -22,7 +22,7 @@ export default function ApiRFC(props) {
         try {
             let result = await axios({
                 method: 'get',
-                url: `${URL_API}/QuanLyPhim/LayDanhSachPhim?maNhom=GP02`,
+                url: `${URL_API}/QuanLyPhim/LayDanhSachPhim?maNhom=GP03`,
                 headers: { "TokenCybersoft": TOKENCYBER }
             });
              setMangPhim(result.data.content);

@@ -10,6 +10,10 @@ import Counter from "./components/hooks/Counter"
 import UseEffectDemo from './components/hooks/UseEffectDemo';
 import ApiRCC from './components/hooks/ApiRCC';
 import ApiRFC from './components/hooks/ApiRFC';
+import UserCallBackDemo from './components/hooks/UserCallBackDemo';
+import useMemoDemo from './components/hooks/useMemoDemo';
+import UseRefDemo from './components/hooks/UseRefDemo';
+import ReduxDemo from './pages/ReduxDemo/ReduxDemo';
 
 // cáu hình router
 
@@ -32,6 +36,14 @@ function App() {
         <Route exact path="/use-effect" component={UseEffectDemo} />
         <Route exact path="/apircc" component={ApiRCC} />
         <Route exact path="/apirfc" component={ApiRFC} />
+        <Route exact path="/usecallback" component={UserCallBackDemo} />
+        <Route exact path="/usememo" component={useMemoDemo} />
+        <Route exact path="/useref" component={UseRefDemo} />
+        <Route exact path="/reduxdemo" component={ReduxDemo} />
+        
+        
+        
+        
         
         {/* khi không có / trang cụ thẻ thì mặt đỊnh hiện home   */}
         <Route exact path="/" component={Home} />

@@ -33,7 +33,7 @@ export default class ApiRCC extends Component {
         promise.catch((error) => {
             console.log(error);
         })
-    }
+    } // tạo 1 lần 
 
 
     renderPhim = () => {
@@ -50,7 +50,7 @@ export default class ApiRCC extends Component {
 
             </div>
         })
-    }
+    }// tạo 1 lần
 
 
 
@@ -65,7 +65,7 @@ export default class ApiRCC extends Component {
 
             </div>
         )
-    }
+    }// tạo lại kh updating
 
     componentDidMount() {
         this.getAPI()
