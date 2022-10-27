@@ -48,6 +48,9 @@ export default function Header() {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/reduxdemo">reduxDemoHook</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/apimidd">ApiMiddleWare</NavLink>
+                        </li>
 
                     </ul>
 

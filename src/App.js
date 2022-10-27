@@ -14,6 +14,7 @@ import UserCallBackDemo from './components/hooks/UserCallBackDemo';
 import useMemoDemo from './components/hooks/useMemoDemo';
 import UseRefDemo from './components/hooks/UseRefDemo';
 import ReduxDemo from './pages/ReduxDemo/ReduxDemo';
+import ApiMiddleWare from './pages/ReduxDemo/ApiMiddleWare';
 
 // cáu hình router
 
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/usememo" component={useMemoDemo} />
         <Route exact path="/useref" component={UseRefDemo} />
         <Route exact path="/reduxdemo" component={ReduxDemo} />
+        <Route exact path="/apimidd" component={ApiMiddleWare} />
         
         
         
