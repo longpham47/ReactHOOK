@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { LayDanhSachPhimAction } from '../../redux/action/phimAction'
 import { LAY_DS_PHIM } from '../../redux/types/phimType'
 import { TOKENCYBER, URL_API } from '../../util/setting'
 
@@ -53,27 +54,9 @@ export default function ApiMiddleWare() {
          */
 
         // hàm call api
-        let action = (dispatch2) => {
-            let promise = axios({
-                method: 'get',
-                url: `${URL_API}/QuanLyPhim/LayDanhSachPhim?maNhom=GP04`,
-                headers: {
-                    "TokenCybersoft": TOKENCYBER
-                }
 
-            });
-            promise.then((result) => {
-                console.log(result.data);
-                let action2= {
-                    type: LAY_DS_PHIM,
-                    mangPhim: result.data.content
-                }
-                dispatch2(action2);//đảy dữ liệu lên ređux
-            });
-            promise.catch((error) => {
-                console.log(error.data)
-            });
-        }
+        //nhận kết quả trả về là hàm chưa gọi
+        let action = LayDanhSachPhimAction("GP04");
         dispatch(action);// gọi ahmf call api
     }
 

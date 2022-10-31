@@ -51,6 +51,9 @@ export default function Header() {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/apimidd">ApiMiddleWare</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/detail/phim123">Detail</NavLink>
+                        </li>
 
                     </ul>
 
