@@ -4,11 +4,13 @@ import { phimReducer } from "./reduce/phimReducer";
 //càI đặt middleware
 
 import thunk from "redux-thunk";
+import { QLNDreducer } from "./reduce/QLNDreducer/QLNDreducer";
 
 const rootReducer = combineReducers({
 
     fakeBookReducer,
     phimReducer,
+    QLNDreducer,
 })
 
 

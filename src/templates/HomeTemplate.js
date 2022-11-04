@@ -11,4 +11,4 @@ export const HomeTempLate = (props) => {
             <props.component {...propsRoute} />
         </Fragment>
     }} />
-}
+}   

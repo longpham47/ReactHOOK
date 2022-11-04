@@ -20,6 +20,7 @@ function Cart(props) {
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.price}</td>
+                               
                             </tr>
                         })
                     }

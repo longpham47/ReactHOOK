@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Login from './pages/Login/Login';
@@ -19,14 +19,17 @@ import Detail from './pages/Detail/Detail';
 import Profile from './pages/Profile/Profile';
 import { HomeTempLate } from './templates/HomeTemplate';
 import { FormtempLate } from './templates/FormTemplate';
-
+//hổ trợ sử dugn history của router( cùng phiên bản) cho cacs file ko phai ocmponent
+import { createBrowserHistory } from 'history';
+import LoginUser from './pages/LoginUser/LoginUser';
+export const history = createBrowserHistory();
 
 // cáu hình router
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
 
       {/* <Header /> */}
       {/* // dường path sẻ hiện component home */}
@@ -63,7 +66,7 @@ function App() {
           <HomeTempLate exact path="/home" component={Home} />
           <HomeTempLate exact path="/about" component={About} />
 
-          <FormtempLate exact path="/login" component={Login} />
+          <FormtempLate exact path="/login" component={LoginUser} />
           <FormtempLate exact path="/register" component={Register} />
          
           <HomeTempLate exact path="/counter" component={Counter} />
@@ -89,7 +92,7 @@ function App() {
 
 
 
-    </BrowserRouter>
+    </Router>
 
   );
 }
