@@ -22,7 +22,12 @@ import { FormtempLate } from './templates/FormTemplate';
 //hổ trợ sử dugn history của router( cùng phiên bản) cho cacs file ko phai ocmponent
 import { createBrowserHistory } from 'history';
 import LoginUser from './pages/LoginUser/LoginUser';
+import AntdDemo from './pages/antdDemo/AntdDemo';
+import { AdminTemplate } from './templates/AdminTemplate';
+
+
 export const history = createBrowserHistory();
+
 
 // cáu hình router
 
@@ -82,6 +87,9 @@ function App() {
           <HomeTempLate exact path="/detail/:maPhim" component={Detail} />
 
           <HomeTempLate exact path="/profile/" component={Profile} />
+
+
+          <AdminTemplate exact path="/antd/" component={AntdDemo} />
 
 
 

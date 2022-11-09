@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { store } from './redux/configStore';
 import { Provider } from 'react-redux';
 
+
+// cài đặt antd 
+ import "antd/dist/antd.css"
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
